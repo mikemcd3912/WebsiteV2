@@ -10,11 +10,10 @@
   <packaging>war</packaging>
 
   <name>websiteV2 Maven Webapp</name>
-  <url>http://www.mikebmcdonald.com</url>
 
   <properties>
-	<springframework.version>5.2.18.RELEASE</springframework.version>
-	<springsecurity.version>5.2.13.RELEASE</springsecurity.version>
+	<springframework.version>5.0.2.RELEASE</springframework.version>
+	<springsecurity.version>5.0.0.RELEASE</springsecurity.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -59,7 +58,7 @@
 	<dependency>
 		<groupId>com.mchange</groupId>
 		<artifactId>c3p0</artifactId>
-		<version>0.9.5.2</version>
+		<version>0.9.5.1</version>
 	</dependency>
   
   	<!-- Servlet, JSP and JSTL -->

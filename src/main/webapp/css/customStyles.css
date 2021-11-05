@@ -1,0 +1,65 @@
+.card-body{
+  opacity: 100%;
+  font-size: medium;
+}
+
+.wrapper{
+  min-height: 100%;
+}
+
+html, body{
+  height:100%;
+  min-height: 100%;
+  background-image: url("/images/Canyonlands.jpg");
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
+}
+
+#social{
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.card{
+  border-radius: 1rem;
+  max-width: 1000px;
+}
+span{
+  height:1rem;
+}
+
+iframe{
+  border-radius: 1rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0%;
+}
+
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1000px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1000px;
+  }
+}
