@@ -9,3 +9,4 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 *.properties
+src/main/java/com/mikebmcdonald/websiteV2/config/TestJdbc.java
