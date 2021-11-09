@@ -21,7 +21,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 		
 		Session currentSession = sessionFactory.openSession();
 		
-		Query<Project> getList = currentSession.createQuery("from Project", Project.class);
+		Query<Project> getList = currentSession.createQuery("from Project order by id DESC", Project.class);
 		
 //		currentSession.close();
 		return getList.getResultList();
