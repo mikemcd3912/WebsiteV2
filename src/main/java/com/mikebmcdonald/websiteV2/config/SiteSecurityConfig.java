@@ -25,8 +25,7 @@ public class SiteSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/css/**").permitAll()
-			.antMatchers("/").permitAll()
+			.antMatchers("/", "/css/**", "/images/**").permitAll()
 			.and()
 			.formLogin()
 				.loginPage("/Login")

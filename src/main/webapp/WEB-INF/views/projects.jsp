@@ -54,7 +54,14 @@
       </div>
     </nav>
     <div> 
-
+		<div class="row pt-5 justify-content-md-center">
+		    <div class="card text-white bg-secondary mb-3">
+			  <div class="card-body">
+			    <h3 class="text-center">About this page:</h3>
+	            <p class="card-text">This page is backed by a database of my completed projects, and is updated by me periodically using a Spring Security authenticated "add a project" page that I can use to add new projects, or editing features for each entry. The entries themselves are saved in a MySQL database, and managed using hibernate Object Relational Mapping (ORM). As of now the projects are listed with the most recently completed presented first</p>
+			  </div>
+			</div>
+		</div>
     </div>
 	<div class="container-sm">
 		<c:forEach var="tempProject" items="${project}">

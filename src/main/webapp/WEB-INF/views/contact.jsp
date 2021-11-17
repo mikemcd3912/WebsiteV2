@@ -68,7 +68,7 @@
 	    </div>
 	    <div class="container pt-5" style="max-width: fit-content;">    
 	        <div class="card">
-	            <div class="card-body">
+	            <div class="card-body text-center">
 	                <a href="mailto:mike.mcdonald3912@outlook.com">
 	                Mike.McDonald3912@outlook.com</a>
 	            </div>

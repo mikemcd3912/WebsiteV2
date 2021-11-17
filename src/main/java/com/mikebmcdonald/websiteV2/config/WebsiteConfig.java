@@ -44,7 +44,7 @@ public class WebsiteConfig implements WebMvcConfigurer{
 	
 	 public void addResourceHandlers(ResourceHandlerRegistry registry) {
 	     registry.addResourceHandler("/css/**").addResourceLocations("/css/");
-	     registry.addResourceHandler("/images/**").addResourceLocations("/images");
+	     registry.addResourceHandler("/images/**").addResourceLocations("/images/");
 	 }
 	
 	@Bean
