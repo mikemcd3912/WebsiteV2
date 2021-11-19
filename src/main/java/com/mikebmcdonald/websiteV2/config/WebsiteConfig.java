@@ -94,7 +94,6 @@ public class WebsiteConfig implements WebMvcConfigurer{
 	}
 	
 	@Bean
-	@Autowired
 	public HibernateTransactionManager transManager(SessionFactory sessionFactory) {
 		// setup transaction manager based on session factory
 		HibernateTransactionManager txMngr = new HibernateTransactionManager();

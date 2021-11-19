@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,24 +55,56 @@
         </right>
       </div>
     </nav>
+    
     <div> 
-		<div class="row pt-5 justify-content-md-center">
-		    <div class="card text-white bg-secondary mb-3">
+		<div class="row pt-2 justify-content-md-center">
+		    <div class="card text-white bg-secondary mb-1" style="max-width: 1200px">
 			  <div class="card-body">
 			    <h3 class="text-center">About this page:</h3>
-	            <p class="card-text">This page is backed by a database of my completed projects, and is updated by me periodically using a Spring Security authenticated "add a project" page that I can use to add new projects, or editing features for each entry. The entries themselves are saved in a MySQL database, and managed using hibernate Object Relational Mapping (ORM). As of now the projects are listed with the most recently completed presented first</p>
+	            <p class="card-text">This page is backed by a database of my completed projects, and is updated by me periodically using a Spring Security authenticated 
+	            					"add a project" page containing a form that I can use to add new projects, or by editing features for each entry using Spring Security 
+	            					"Edit" links that are visible on each project when the user is authenticated. The entries themselves are saved in a MySQL database, 
+	            					and managed using hibernate Object Relational Mapping (ORM). As of now the projects are listed with the most recently completed presented first. 
+	            					<br>
+	            					<br>
+	            					If you would like to take a look at how projects are added, updated or deleted, feel free to log in using the credentials user: "visitor" and password:
+	            					 "visitor" for a view-only experience of that administrative interface</p>
 			  </div>
+		      <div class="col text-center">
+	  		        <security:authorize access="!isAuthenticated()">
+	  		        <a class="btn btn-info btn-sm btn-block" href="${pageContext.request.contextPath}/login">Login for Add/Update/Delete of Project information</a>
+	  		        </security:authorize>
+    				<security:authorize access="isAuthenticated()">
+    					<br>
+   						<form:form action="${pageContext.request.contextPath}/logout" method="POST">
+							<input class="btn btn-primary btn-sm" type="submit" value="Logout"/>
+						</form:form>
+						<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/addNewPjkt">Add New Project</a>
+	        		</security:authorize>
+	        		
+    		  </div>
+    		  <br>
 			</div>
 		</div>
     </div>
 	<div class="container-sm">
 		<c:forEach var="tempProject" items="${project}">
-			<div class="row pt-5 justify-content-md-center">
+			<c:url var="updateLink" value="/update">
+				<c:param name="projectId" value="${tempProject.id}"/>
+			</c:url>
+			<c:url var="deleteLink" value="/delete">
+				<c:param name="projectId" value="${tempProject.id}"/>
+			</c:url>
+			<div class="row pt-4 justify-content-md-center">
 			    <div class="card mb-3">
 			        <div class="card-body">
 			            <h3>${tempProject.title}</h3>
 			            <p class="card-text">${tempProject.description}</p>
 			            <h4 href="${tempProject.gitHubLink}">${tempProject.gitHubLink}</h4>
+	        			<security:authorize access="isAuthenticated()">	
+				        	<a class="btn btn-warning btn-sm" href="${updateLink}">Update Project</a>
+				        	<a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Are you sure you want to delete this Project?'))) return  false">Delete Project</a>
+			        	</security:authorize>
 			        </div>
 			    </div>
 			</div>

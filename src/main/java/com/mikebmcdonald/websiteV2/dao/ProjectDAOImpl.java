@@ -30,16 +30,31 @@ public class ProjectDAOImpl implements ProjectDAO {
 	@Override
 	public void saveProject(Project theProject) {
 		Session currentSession = sessionFactory.openSession();
+		currentSession.beginTransaction();
 		currentSession.saveOrUpdate(theProject);
+		currentSession.getTransaction().commit();
 		currentSession.close();
 	}
 
 	@Override
 	public Project getProject(int id) {
 		Session currentSession = sessionFactory.openSession();
+		Project focusProject = currentSession.get(Project.class, id);
 		currentSession.close();
-		return currentSession.get(Project.class, id);
+		return focusProject;
 		
+	}
+
+	@Override
+	public void deleteProject(int id) {
+		Session currentSession = sessionFactory.openSession();
+		currentSession.beginTransaction();
+		Query theQuery = currentSession.createQuery("delete from Project where id=:projectId");
+		theQuery.setParameter("projectId", id);
+		
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
 	}
 
 }

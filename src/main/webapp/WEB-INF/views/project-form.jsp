@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,8 +57,49 @@
     </nav>
 
 	<div class="row pt-4 justify-content-md-center">
-		<div class="card mb-1" style="max-width:500px">
-			<p>Uh oh! Project Add, Delete or Update procedures are not allowed by visitors based upon my security configurations, so the action was blocked. 
+		<div class="card mb-1" style="max-width:1000px">
+			<h3> Save Project</h3>
+			
+			<form:form action="saveProject" modelAttribute="project" method="POST">
+			
+				<!--  need to associate this data with customer ID -->
+				<form:hidden path="id" />
+				
+				<table>
+					<tbody>
+						<tr>
+							<td><label>Title: </label></td>
+							<td><form:input path="title" /></td>
+						</tr>
+	
+						<tr>
+							<td><label>Description: </label></td>
+							<td><form:input path="description" /></td>
+						</tr>
+						
+						<tr>
+							<td><label>GitHub Link: </label></td>
+							<td><form:input path="gitHubLink" /></td>
+						</tr>
+						
+						<tr>
+							<td><label></label></td>
+							<security:authorize access="hasRole('ADMIN')">	
+								<td><input type="submit" value="Save" class="save"/></td>
+							</security:authorize>
+							<security:authorize access="!hasRole('ADMIN')">	
+								<td><h5>Submit Button Hidden for Visitors</h5></td>
+							</security:authorize>
+						</tr>
+						
+					</tbody>
+				</table>
+			</form:form>
+			
+			<div style="clear; both;"></div>
+			<p>
+				<a href="${pageContext.request.contextPath}/Projects">Back to Projects</a>
+			</p>
 		</div>
 	</div>
 </div>

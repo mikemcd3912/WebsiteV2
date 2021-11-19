@@ -25,14 +25,18 @@ public class SiteSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+			.antMatchers("/delete", "/saveProject").hasRole("ADMIN")
+			.antMatchers("/addNewPjkt", "/update").authenticated()
 			.antMatchers("/", "/css/**", "/images/**").permitAll()
 			.and()
 			.formLogin()
-				.loginPage("/Login")
-				.loginProcessingUrl("/authenticate")
+				.loginPage("/login")
+				.loginProcessingUrl("/authenticate").defaultSuccessUrl("/Projects")
 				.permitAll()
 			.and()
-			.logout().permitAll();
+			.exceptionHandling().accessDeniedPage("/Error")
+			.and()
+			.logout().logoutSuccessUrl("/Projects").permitAll();
 		
 	}
 	

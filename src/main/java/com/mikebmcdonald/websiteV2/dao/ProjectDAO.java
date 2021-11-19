@@ -11,5 +11,7 @@ public interface ProjectDAO {
 	public void saveProject(Project theProject);
 	
 	public Project getProject(int id);
+
+	void deleteProject(int id);
 	
 }
