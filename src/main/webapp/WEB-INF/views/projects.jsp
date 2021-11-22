@@ -63,8 +63,8 @@
 			    <h3 class="text-center">About this page:</h3>
 	            <p class="card-text">This page is backed by a database of my completed projects, and is updated by me periodically using a Spring Security authenticated 
 	            					"add a project" page containing a form that I can use to add new projects, or by editing features for each entry using Spring Security 
-	            					"Edit" links that are visible on each project when the user is authenticated. The entries themselves are saved in a MySQL database, 
-	            					and managed using hibernate Object Relational Mapping (ORM). As of now the projects are listed with the most recently completed presented first. 
+	            					"Update" links that are visible on each project when the user is authenticated. The entries themselves are managed using an update form 
+	            					 and hibernate Object Relational Mapping (ORM) to save updates. Projects are listed with the most recently completed at the top of the list. 
 	            					<br>
 	            					<br>
 	            					If you would like to take a look at how projects are added, updated or deleted, feel free to log in using the credentials user: "visitor" and password:
@@ -75,6 +75,7 @@
 	  		        <a class="btn btn-info btn-sm btn-block" href="${pageContext.request.contextPath}/login">Login for Add/Update/Delete of Project information</a>
 	  		        </security:authorize>
     				<security:authorize access="isAuthenticated()">
+    					<p>Logged in as: <security:authentication property="principal.authorities"/></p>
     					<br>
    						<form:form action="${pageContext.request.contextPath}/logout" method="POST">
 							<input class="btn btn-primary btn-sm" type="submit" value="Logout"/>

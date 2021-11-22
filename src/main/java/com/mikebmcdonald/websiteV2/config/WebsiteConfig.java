@@ -86,7 +86,6 @@ public class WebsiteConfig implements WebMvcConfigurer{
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		
 		sessionFactory.setDataSource(siteDataSource());
-		System.out.println(env.getProperty("hibernate.packagesToScan"));
 		sessionFactory.setPackagesToScan(env.getProperty("hibernate.packagesToScan"));
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;

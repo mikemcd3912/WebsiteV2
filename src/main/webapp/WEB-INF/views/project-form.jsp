@@ -58,7 +58,7 @@
 
 	<div class="row pt-4 justify-content-md-center">
 		<div class="card mb-1" style="max-width:1000px">
-			<h3> Save Project</h3>
+			<h3> Add or Update Project</h3>
 			
 			<form:form action="saveProject" modelAttribute="project" method="POST">
 			
@@ -69,17 +69,17 @@
 					<tbody>
 						<tr>
 							<td><label>Title: </label></td>
-							<td><form:input path="title" /></td>
+							<td><form:input path="title" cssStyle="width:800px;"/></td>
 						</tr>
 	
 						<tr>
 							<td><label>Description: </label></td>
-							<td><form:input path="description" /></td>
+							<td><form:textarea path="description" cssStyle="resize:both; width:800px; height:150px;" /></td>
 						</tr>
 						
 						<tr>
 							<td><label>GitHub Link: </label></td>
-							<td><form:input path="gitHubLink" /></td>
+							<td><form:input path="gitHubLink" cssStyle="width:800px;"/></td>
 						</tr>
 						
 						<tr>
