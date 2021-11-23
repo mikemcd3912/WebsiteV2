@@ -49,10 +49,8 @@ public class ProjectDAOImpl implements ProjectDAO {
 	public void deleteProject(int id) {
 		Session currentSession = sessionFactory.openSession();
 		currentSession.beginTransaction();
-		Query theQuery = currentSession.createQuery("delete from Project where id=:projectId");
-		theQuery.setParameter("projectId", id);
-		
-		theQuery.executeUpdate();
+		Project focusProject = currentSession.get(Project.class, id);
+		currentSession.delete(focusProject);
 		currentSession.getTransaction().commit();
 		currentSession.close();
 	}
