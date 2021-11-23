@@ -23,7 +23,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 		
 		Query<Project> getList = currentSession.createQuery("from Project order by id DESC", Project.class);
 		
-//		currentSession.close();
+		currentSession.close();
 		return getList.getResultList();
 	}
 
