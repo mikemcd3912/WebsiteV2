@@ -20,11 +20,12 @@ public class ProjectDAOImpl implements ProjectDAO {
 	public List<Project> getProjects() {
 		
 		Session currentSession = sessionFactory.openSession();
-		
+		currentSession.beginTransaction();		
 		Query<Project> getList = currentSession.createQuery("from Project order by id DESC", Project.class);
-		
+		List<Project> fullList = getList.getResultList();
+		currentSession.getTransaction().commit();
 		currentSession.close();
-		return getList.getResultList();
+		return fullList;
 	}
 
 	@Override
