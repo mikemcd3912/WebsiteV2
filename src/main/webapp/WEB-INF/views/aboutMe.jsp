@@ -70,8 +70,8 @@
 	            </div>
 	            <div class="card mb-3">
 	                <div class="card-body">
-	                    <p class="card-text"> When I'm not working on a project of some sort or riding my motorcycle I love getting outdoors. Car camping, Snowshoeing, Backpacking 
-	                    with my wife or taking my dog Tater tot on walks around the neighborhood are all I've been able to do lately, but I hope to be able to travel to more exotic locations again soon as the world returns to normal. 
+	                    <p class="card-text"> When I'm not working on a project of some sort or riding my motorcycle I love getting outdoors. Whether it's car camping, snowshoeing, backpacking, snowboarding or fishing I love 
+	                    finding new activities to try here in the Pacific Northwest. 
 	                    </p>
 	                </div>
 	                <img class="card-img-bottom" src="<c:url value='/images/Canyonlands.png'/>" alt="Canyonlands">

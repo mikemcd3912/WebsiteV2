@@ -71,7 +71,8 @@
 	        <div class="card mb-3">
 	            <div class="card-body">
 	                <p class="card-text">In January of 2021 I returned to school full time to commit to the transition into Computer Science and focus my attention on learning the 
-	                skills I will need on my new path. If I sound like a good fit for your team, please don't hesitate to reach out! I graduated in August and am currently seeking a full time opportunity 
+	                skills I will need on my new path, and in December of 2021 I started my IT career with my current role as a Solutions Architect! I am still learning and still
+	                working on new software development projects, so even though I am not currently seeking a new role I will be updating the projects on this site from time to time
 	                </p>
 	            </div>
 	        </div>

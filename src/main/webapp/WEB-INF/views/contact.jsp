@@ -59,9 +59,8 @@
 	    <div class="container pt-5" style="max-width: fit-content;">    
 	        <div class="card">
 	            <div class="card-body">
-	                <p class="card-text">Thank you for visiting my site! I am located in the Seattle area, and if you have an open developer role local or remote that I may be a good fit for I 
-	                    would love to hear from you. I can be reached at the email or the social links below, or at the contact information listed in my resume on the Professional 
-	                    Experience page
+	                <p class="card-text">Thank you for visiting my site! If you want to get in touch with me I can be reached at the email or 
+	                the social links below, or at the contact information listed in my resume on the Professional Experience page
 	                </p>
 	            </div>
 	        </div>

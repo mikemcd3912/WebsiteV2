@@ -60,8 +60,9 @@
 	        <div class="col-12 pt-5">
 	            <div class="card mb-3">
 	                <div class="card-body">
-	                    <p class="card-text"> My name is Mike McDonald, and I am a new graduate with a Bachelors in Computer Science through Oregon State University. I am actively seeking a full time software development opportunity, 
-	                                            so if you are hiring please don't hesistate to reach out!
+	                    <p class="card-text"> My name is Mike McDonald, I graduated with a Bachelors in Computer Science through Oregon State University and  
+	                    I am currently working as a Solutions Architect. I created this website to practice my full stack development skills and to serve 
+	                    as a portfolio of my own software development project experience. Thanks for visiting! 
 	                    </p>
 	                </div>
 	            </div>
